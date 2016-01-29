@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var cors = require('cors')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors());
 app.use('/', routes);
 app.use('/users', users);
 
@@ -30,7 +30,7 @@ app.get('/secretinfo', function(req, res){
   secretObject.secretData = Math.floor(Math.random()*1000000)+1
   secretObject.secretString = "Coincidentally, the president ate "+secretObject.secretData+" waffles this morning."
 
-  res.jsonp(secretObject)
+  res.json(secretObject)
 })
 
 // catch 404 and forward to error handler
