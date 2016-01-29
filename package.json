@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dlinch/hackathon/issues"
   },
-  "homepage": "https://github.com/dlinch/hackathon#readme"
+  "homepage": "https://github.com/dlinch/hackathon#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
