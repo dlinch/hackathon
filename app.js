@@ -30,7 +30,7 @@ app.get('/secretinfo', function(req, res){
   secretObject.secretData = Math.floor(Math.random()*1000)+1
   secretObject.secretString = "The president ate "+secretObject.secretData+" waffles this morning."
 
-  res.json(secretData)
+  res.json(secretObject)
 })
 
 // catch 404 and forward to error handler
